@@ -10,6 +10,8 @@ namespace BlackJackConsole
     {
         static void Main(string[] args)
         {
+            Shoe testShoe = new Shoe();
+            Console.WriteLine(testShoe.GetTopCard());
         }
     }
 }
