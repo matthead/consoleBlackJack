@@ -12,19 +12,16 @@ namespace BlackJackConsole
         {
             this.numberOfDecks = numberOfDecks;
             //used for first instance of shoe populates shoe list and initializes usedCard list
-            if (shoe == null)
-            {
-                shoe = new List<Models.Card>();
-                List<Models.Card> oneStandardDeck = DeckFactory.BuildDeck();
-                FillShoe(ref oneStandardDeck);
-                usedCards = new List<Models.Card>();
-            }
+            shoe = new List<Models.Card>();
+            List<Models.Card> oneStandardDeck = DeckFactory.BuildDeck();
+            FillShoe(ref oneStandardDeck);
+            usedCards = new List<Models.Card>();
             // if new game then puts the cards back into the shoe and clears the usedcards. this could be a problem if references, but cannot test 
-            else
+            /*else
             {
                 AddUsedCardsBackIntoShoe();
                 usedCards.Clear();
-            }
+            } */
             SetCutCardPosition();
             //ShuffleShoe(); 
         }

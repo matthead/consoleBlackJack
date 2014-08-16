@@ -10,10 +10,7 @@ namespace BlackJackConsole.Models
     {
         public Hand()
         {
-            if (hand == null)
-            {
-                hand = new List<Card>();
-            }
+            hand = new List<Card>();
         }
         public List<Card> hand { get; private set; }
     }

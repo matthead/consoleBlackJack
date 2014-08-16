@@ -11,14 +11,8 @@ namespace BlackJackConsole.Models
         public Table()
         {
             // new table started
-            if (players == null)
-            {
-                players = new List<Player>();
-            }
-            if (dealer == null)
-            {
-                dealer = new Dealer(this);
-            }
+            players = new List<Player>();
+            dealer = new Dealer(this);
             shoe = new Shoe();
             this.maxNumberOfPlayers = 6;
             rule = new Rules();
