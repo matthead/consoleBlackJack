@@ -48,16 +48,5 @@ namespace BlackJackConsole.Models
         {
             return maxNumberOfPlayers - players.Count();
         }
-        private bool Validbet()
-        {
-            foreach (Player player in players)
-            {
-                if (player.currentBet < minBet || player.currentBet > maxBet)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }       
     }
 }

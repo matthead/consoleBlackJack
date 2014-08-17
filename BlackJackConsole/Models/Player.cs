@@ -16,5 +16,13 @@ namespace BlackJackConsole.Models
         {
             hand = new Hand();
         }
+        private bool Validatebet(Table table)
+        {
+            if (currentBet < table.minBet || currentBet > table.maxBet)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
