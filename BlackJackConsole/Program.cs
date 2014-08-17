@@ -14,6 +14,7 @@ namespace BlackJackConsole
             Models.Player player = new Models.Player();
             Multiplayer mp = Multiplayer.Instance;
             Models.Table table =  mp.selectTable(player, 2);
+            table.Start();
             foreach (Models.Card card in player.hand.cards)
             {
                 Console.WriteLine(card);

@@ -40,6 +40,7 @@ namespace BlackJackConsole.Models
         {
             dealer.DealMainRound();
         }
+        /******************************** ***********/
         public bool RemovePlayer(Player playerLeaving)
         {
             return players.Remove(playerLeaving);

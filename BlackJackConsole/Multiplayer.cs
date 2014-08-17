@@ -35,7 +35,6 @@ namespace BlackJackConsole
         public Models.Table selectTable(Models.Player player,int selection)
         {
             _table[selection].AddPlayerToTable(player);
-            _table[selection].Start();
             return _table[selection];
         }
     }
