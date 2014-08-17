@@ -16,10 +16,11 @@ namespace BlackJackConsole
             Models.Player player= new Models.Player();
             table.AddPlayerToTable(player);
             table.Start();
-            foreach (Models.Card card in player.hand.hand)
+            foreach (Models.Card card in player.hand.cards)
             {
                 Console.WriteLine(card);
             }
+            Console.WriteLine(table.rule.EvaluateTotal(player.hand));
         }
     }
 }

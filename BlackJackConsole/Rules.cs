@@ -11,9 +11,19 @@ namespace BlackJackConsole
         public int EvaluateTotal(Models.Hand hand)
         {
             int handTotal = 0;
-            foreach (Models.Card card in hand.hand)
+            bool oneOfPlayersCardsIsAnAce = false;
+            foreach (Models.Card card in hand.cards)
             {
                 handTotal += (int)card.faceValue;
+                if (card.faceValue == Models.FaceValue.ace)
+                {
+                    oneOfPlayersCardsIsAnAce = true;
+                }
+            }
+            //Makes ace worth a total of 11. you only need to worry about one ace per hand to be worth 11
+            if (handTotal + 10 <= 21 && oneOfPlayersCardsIsAnAce)
+            {
+                handTotal += 10;
             }
             return handTotal;
         }
@@ -23,9 +33,9 @@ namespace BlackJackConsole
         }
         public bool IsHandSplitablle(Models.Hand hand)
         {
-            if (hand.hand.Count == 2)
+            if (hand.cards.Count == 2)
             {
-                if (hand.hand[0].faceValue == hand.hand[1].faceValue)
+                if (hand.cards[0].faceValue == hand.cards[1].faceValue)
                 {
                     return true;
                 }
@@ -34,7 +44,15 @@ namespace BlackJackConsole
         }
         public bool IsHandDoubleable(Models.Hand hand)
         {
-            return hand.hand.Count == 2 && EvaluateTotal(hand) < 20;
+            return hand.cards.Count == 2 && EvaluateTotal(hand) < 20;
+        }
+        public bool IsHandBlackJack(Models.Hand hand)
+        {
+            if (hand.cards.Count() == 2)
+            {
+                return EvaluateTotal(hand) == 21;
+            }
+            return false;
         }
     }
 }

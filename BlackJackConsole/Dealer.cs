@@ -25,10 +25,10 @@ namespace BlackJackConsole
                     foreach (Models.Player player in table.players)
                     {
 
-                        player.hand.hand.Add(table.shoe.GetTopCard());
+                        player.hand.cards.Add(table.shoe.GetTopCard());
                     }
                     //add cards to dealer hands also;
-                    this.hand.hand.Add(table.shoe.GetTopCard());
+                    this.hand.cards.Add(table.shoe.GetTopCard());
                 }
             }
         }
