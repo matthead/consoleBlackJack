@@ -8,10 +8,10 @@ namespace BlackJackConsole.Models
 {
     public class Hand
     {
+        public List<Card> cards { get; private set; }
         public Hand()
         {
             cards = new List<Card>();
         }
-        public List<Card> cards { get; private set; }
     }
 }

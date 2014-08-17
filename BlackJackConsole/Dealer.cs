@@ -16,7 +16,7 @@ namespace BlackJackConsole
         public void DealMainRound()
         {
             isInMiddleOfDeal = true;
-            //makes sure there are people at the table and that the shoe did not end
+            //makes sure there are people at the table and that the _shoe did not end
             if (table.players.Count > 0 && !table.shoe.ShoeEnded())
             {                
                     //loop the players twice so each player will have 2 cards
@@ -35,7 +35,7 @@ namespace BlackJackConsole
         public Models.Hand hand { get; private set; }
         public bool isInMiddleOfDeal { get; private set; }
         Models.Table table;
-        private Shoe shoe;
+        private Models.Shoe shoe;
         
 
 

@@ -8,6 +8,13 @@ namespace BlackJackConsole.Models
 {
     class Table : Interfaces.ITable
     {
+        public List<Player> players { get; private set; }
+        public int minBet { get; private set; }
+        public int maxBet { get; private set; }
+        public int maxNumberOfPlayers { get; private set; }
+        public Rules rule { get; private set; }
+        public Dealer dealer { get; private set; }
+        public Shoe shoe { get; private set; }
         public Table()
         {
             // new table started
@@ -51,15 +58,6 @@ namespace BlackJackConsole.Models
                 }
             }
             return true;
-        }
-        public List<Player> players { get; private set; }
-        public int minBet { get; private set; }
-        public int maxBet { get; private set; }
-        public int maxNumberOfPlayers { get; private set; }
-        public  Rules rule { get; private set;}
-        public Dealer dealer { get; private set; }
-        public Shoe shoe { get; private set; }
-
-        
+        }       
     }
 }
