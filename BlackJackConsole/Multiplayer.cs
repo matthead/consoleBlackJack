@@ -32,9 +32,9 @@ namespace BlackJackConsole
                 return instance;
             }
         }
-        public Models.Table selectTable(Models.Player player,int selection)
+        public Models.Table selectTable(Models.Player player,int selection,out bool personWasAdded)
         {
-            _table[selection].AddPlayerToTable(player);
+            personWasAdded =_table[selection].AddPlayerToTable(player);
             return _table[selection];
         }
     }

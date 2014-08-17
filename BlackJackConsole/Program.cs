@@ -13,13 +13,22 @@ namespace BlackJackConsole
 
             Models.Player player = new Models.Player();
             Multiplayer mp = Multiplayer.Instance;
-            Models.Table table =  mp.selectTable(player, 2);
-            table.Start();
-            foreach (Models.Card card in player.hand.cards)
+            bool personAdded;
+            Models.Table table =  mp.selectTable(player, 2,out personAdded);
+            if (personAdded)
             {
-                Console.WriteLine(card);
+                table.Start();
+                table.dealer.ClearHandFromEveryone();
+                table.Start();
             }
-            Console.WriteLine(table.rule.EvaluateTotal(player.hand));
+            foreach (Models.Hand hand in player.hand)
+            {
+                foreach (Models.Card card in hand.cards)
+                {
+                    Console.WriteLine(card);
+                }
+            }
+            Console.WriteLine(table.rule.EvaluateTotal(player.hand[0]));
         }
     }
 }

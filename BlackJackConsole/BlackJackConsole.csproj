@@ -48,6 +48,7 @@
     <Compile Include="Models\Interfaces\IShoe.cs" />
     <Compile Include="Models\Interfaces\ITable.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="PlayerActions.cs" />
     <Compile Include="Models\Table.cs" />
     <Compile Include="Multiplayer.cs" />
     <Compile Include="Program.cs" />

@@ -10,11 +10,13 @@ namespace BlackJackConsole.Models
     {
         public int wealth { get; private set; }
         public string password { get; private set; }
-        public Hand hand { get; private set; }
+        public List<Hand> hand { get; private set; }
         public int currentBet { get; private set; }
         public Player()
         {
-            hand = new Hand();
+            hand = new List<Hand>();
+            //have to add a new instance which is needed because dealingmainround will explicitly use hand[0] 
+            hand.Add(new Hand());
         }
         private bool Validatebet(Table table)
         {
