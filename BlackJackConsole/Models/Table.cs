@@ -17,7 +17,7 @@ namespace BlackJackConsole.Models
         public Shoe shoe { get; private set; }
         public Table()
         {
-            // new table started
+            // new _table started
             players = new List<Player>();
             dealer = new Dealer(this);
             shoe = new Shoe();

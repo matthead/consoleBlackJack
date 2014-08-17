@@ -17,15 +17,15 @@ namespace BlackJackConsole.Models
     public class Card
     {
         private Suit _suit { get; set; }
-        public FaceValue _faceValue { get; private set; }
         public Card(Suit suit, FaceValue faceValue)
         {
             this._suit = suit;
-            this._faceValue = faceValue;
+            this.faceValue = faceValue;
         }
+        public FaceValue faceValue { get; private set; }
         public override string ToString()
         {
-            return this._faceValue.ToString() + " of " + this._suit.ToString();
+            return this.faceValue.ToString() + " of " + this._suit.ToString();
         }
     }
 }

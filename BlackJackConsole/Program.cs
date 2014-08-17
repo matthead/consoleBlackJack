@@ -10,12 +10,10 @@ namespace BlackJackConsole
     {
         static void Main(string[] args)
         {
-         //   Shoe testShoe = new Shoe();
-          //  Console.WriteLine(testShoe.GetTopCard());
-            Models.Table table = new Models.Table();
-            Models.Player player= new Models.Player();
-            table.AddPlayerToTable(player);
-            table.Start();
+
+            Models.Player player = new Models.Player();
+            Multiplayer mp = Multiplayer.Instance;
+            Models.Table table =  mp.selectTable(player, 2);
             foreach (Models.Card card in player.hand.cards)
             {
                 Console.WriteLine(card);

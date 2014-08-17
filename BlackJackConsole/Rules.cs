@@ -14,8 +14,8 @@ namespace BlackJackConsole
             bool oneOfPlayersCardsIsAnAce = false;
             foreach (Models.Card card in hand.cards)
             {
-                handTotal += (int)card._faceValue;
-                if (card._faceValue == Models.FaceValue.ace)
+                handTotal += (int)card.faceValue;
+                if (card.faceValue == Models.FaceValue.ace)
                 {
                     oneOfPlayersCardsIsAnAce = true;
                 }
@@ -35,7 +35,7 @@ namespace BlackJackConsole
         {
             if (hand.cards.Count == 2)
             {
-                if (hand.cards[0]._faceValue == hand.cards[1]._faceValue)
+                if (hand.cards[0].faceValue == hand.cards[1].faceValue)
                 {
                     return true;
                 }
